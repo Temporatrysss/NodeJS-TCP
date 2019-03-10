@@ -1,30 +1,19 @@
 var net = require('net');
 var textChunk = '';
-let count = 0;
+let count=0;
 var server = net.createServer(function (socket) {
   socket.setEncoding('utf-8');
   socket.write('Echo server\r\n');
   socket.on('data', function (data) {
-    // count++;
     textChunk += data;
-    // if (count == 2) {
-    //   const arr = textChunk.split('</EndofFile>');
-    //   console.log(JSON.parse(arr[0]).base64);
-    //   textChunk = '';
-    //   count = 0;
-    // }
-    // console.log(data);
-    console.log('data');
-    //const arr = data.split('</EndofFile>');
-    // console.log(JSON.parse(arr[0]).base64);
-    //textChunk = data.toString('utf8');
-    //console.log(textChunk);
-    //socket.write(textChunk);
+    console.log(data);
+    count++;
+    socket.write('Echo\r\n'+count);
   });
   socket.on('end', function () {
     const arr = textChunk.split('</EndofFile>');
-    console.log(JSON.parse(arr[0]).base64);
-    //console.log(textChunk);
+    //console.log('receive: '+JSON.parse(arr[0]).base64);
+    console.log(`receive: ${arr}`);
     textChunk = '';
   });
 });

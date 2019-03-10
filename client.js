@@ -5,7 +5,7 @@ var net = require('net');
 function getConn(connName) {
 
   var option = {
-    host: 'localhost',
+    host: '58.114.172.33',
     port: 3010
   }
 
