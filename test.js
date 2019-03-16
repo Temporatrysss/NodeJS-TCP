@@ -36,3 +36,4 @@ BpHubIEmtNMgKSQJRpNTTpIPU3////////6de+hv///mOdkJ8hU4NnGKLjB8bFseWUG40PX8q9UokjgA
 
 console.log(data.length+" data");
 
+console.log(Buffer.from("Hello World").toString('base64'));
