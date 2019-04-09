@@ -17,7 +17,7 @@ var server = net.createServer(function (socket) {
     textChunk = '';
   });
 });
-server.listen(3010, '58.114.172.33');
+server.listen(3010, '192.168.51.204.');
 
 // // Import net module.
 // var net = require('net');
